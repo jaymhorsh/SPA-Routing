@@ -73,24 +73,30 @@ export default EventsPage;
 // import EventsList from "../components/EventsList";
 
 // function EventsPage() {
-//   const events = useLoaderData();
-//   return (
-//     <>
-//       <EventsList events={events} />
-//     </>
-//   );
+//   const { data, error } = useLoaderData();
+
+//   if (error) {
+//     return <p>{error.message}</p>;
+//   }
+
+//   if (!data) {
+//     return <p>Loading...</p>;
+//   }
+
+//   const events = data.events;
+
+//   return <EventsList events={events} />;
 // }
 
 // export default EventsPage;
 
-// export async function eventsLoader() {
-//   const response = await fetch("http://localhost:8080/events");
+// export async function loader() {
+//   const response = await fetch('http://localhost:8080/events');
+//   const data = await response.json();
 
 //   if (!response.ok) {
-//     throw new Error("Fetching events failed.");
+//     throw new Error(data.message || 'Could not fetch events.');
 //   }
 
-//   const resData = await response.json();
-//   return resData.events;
+//   return { events: data };
 // }
-
