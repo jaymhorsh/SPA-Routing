@@ -5,8 +5,9 @@ import EventsNavigation from "../components/EventsNavigation";
 function EventsRootLayout() {
   return (
     <>
-      <EventsNavigation />
+      
       <main>
+        <EventsNavigation />
         <Outlet />
       </main>
     </>

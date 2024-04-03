@@ -1,9 +1,11 @@
-import React from 'react'
+import PageContent from '../components/PageContent';
 
-const HomePage = () => {
+function HomePage() {
   return (
-    <div>This is the HomePage</div>
-  )
+    <PageContent title="Welcome!">
+      <p>Browse all our amazing events!</p>
+    </PageContent>
+  );
 }
 
-export default HomePage
+export default HomePage;
